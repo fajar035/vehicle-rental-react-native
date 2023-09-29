@@ -52,6 +52,7 @@ const Home = ({navigation, route}) => {
       setBike(resBike);
       setPopular(removeDuplicate(resPopular));
       setMotorBike(resMotorBike);
+      setIsLoading(false);
     } catch (err) {
       console.log('ERROR GET VEHICLES : ', err);
       alert('Server error occurred ...');
@@ -60,7 +61,7 @@ const Home = ({navigation, route}) => {
   }, []);
 
   useEffect(() => {
-    // setIsLoading(true);
+    setIsLoading(true);
 
     getVehicle();
 
